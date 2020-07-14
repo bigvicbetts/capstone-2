@@ -83,8 +83,9 @@ public class Player {
             for (int[] position : selectedPiece.legalMoves()) {
                 Character firstPosition = (char)(position[0] + 96);
                 int secondPosition = position[1];
-                System.out.println(firstPosition.toString() + secondPosition);
+                System.out.print(firstPosition.toString() + secondPosition + ", ");
             }
+                System.out.println();
             int[] endSquare = getInput("Select square to move " + selectedPiece.getSymbol() + " to: ");
             destinationSpace = Board.getSquarePiece(endSquare);
                 while (!selectedPiece.legalMoves().stream().anyMatch(move -> Arrays.equals(move, endSquare))) {

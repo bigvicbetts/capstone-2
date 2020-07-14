@@ -33,7 +33,9 @@ public class Game implements IWatchBoard {
             activePlayer.play();
             for (Player player : players) {
                 if (player.wins()) {
-                    System.out.println(activePlayer.name + " loses the game!! :-(");
+                    currentPlayerIndex++;
+                    activePlayer = players.get(currentPlayerIndex % 2);
+                    System.out.println(activePlayer.name + " wins the game!!");
                     return false;
                 }
             }
